@@ -1,0 +1,46 @@
+<view class='container'>
+  <view class='main'>
+    <view class='nav'>
+      <button class='nav_item' plain='true' style='border:0' disabled='{{b_flag}}' bindtap='get_thatday' data-opt='prev'>
+        <view class='nav_text'>昨天</view>
+      </button>
+    </view>
+    <view class='mid'>
+      <view>
+        <button plain='true' style='border:0' bindtap='rorate_cat' >
+          <image id='cat' class='img' src='{{img_src}}' style='transform:rotate({{angle}}deg);'></image>
+        </button>  
+      </view>
+      <view>
+        <text>今天是{{today}}</text>
+        <view wx:if="{{f_flag}}">
+          <text>今天是今年的第{{passed_day}}天，离今年结束还有{{remain_day}}天哦</text>
+        </view>
+      </view>
+      <view class='blabla'>
+        {{msg}}
+      </view>
+    </view>
+    <view class='nav'>
+      <button class='nav_item' plain='true' disabled='{{b_flag}}' style='border:0' bindtap='get_thatday' data-opt='next'>
+        <view class='nav_text'>明天</view>
+      </button>
+    </view>
+  </view>
+  
+  <view class="marquee">
+      <view class="content">
+          <text>露露喜欢扭着身子睡觉</text> <text style="display: inline-block; width: 5em;"></text>
+          <text>啊毛虽然腿短但是肥呀</text> <text style="display: inline-block; width: 5em;"></text> 
+          <text>露露是一只好奇宝宝</text> <text style="display: inline-block; width: 5em;"></text>       
+          <text>啊毛喜欢用头撞人</text> <text style="display: inline-block; width: 5em;"></text>  
+          <text>露露喜欢欺负啊毛</text> <text style="display: inline-block; width: 5em;"></text>        
+          <text>啊毛是一只箱子怪，因为他可以在箱子睡上一天</text> <text style="display: inline-block; width: 5em;"></text>
+          <text>露露虽然蠢但是丑啊</text> <text style="display: inline-block; width: 5em;"></text>
+          <text>露露喜欢扭着身子睡觉</text> <text style="display: inline-block; width: 5em;"></text>
+          <text>啊毛虽然腿短但是肥呀</text> <text style="display: inline-block; width: 5em;"></text> 
+          <text>露露是一只好奇宝宝</text> <text style="display: inline-block; width: 5em;"></text>    
+
+      </view>
+  </view>
+</view>

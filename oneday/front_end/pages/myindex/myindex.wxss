@@ -1,0 +1,100 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #F8F9FB;
+  margin: 0;
+  padding: 0;
+}
+
+.container, .main{
+  position: relative;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70rpx 0 0 0;
+  box-sizing: border-box;
+} 
+
+.main {
+  display: flex;
+  height: 90%;
+  width: 100%;
+  flex-direction: row;
+  padding: 0;
+}
+
+.nav {
+  height: 100%;
+  width: 15%;
+  text-align:center;
+}
+
+.nav_item {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.nav_text {
+  position: absolute;
+  top: 45%;
+  left: 18%;
+}
+
+.mid {
+  height: 100%;
+  width: 70%;
+  text-align:center;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border: 5px;
+  border-radius: 10px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.blabla {
+  padding-top: 20px;
+  text-indent: 1em;
+  text-align: left;
+}
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align:center;
+  padding: 20px 0 10px 0;
+}
+
+text {
+  line-height: 1.5;
+}
+
+@keyframes kf-marque-animation{ 0% { transform: translateX(0); } 100% { transform: translateX(-71.6%); } }
+.marquee{
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background: #fff;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    position: relative;
+    font-size: 28rpx;
+}
+.marquee .content{
+    display: inline-block;
+    position: relative;
+    padding-right: 0px;
+    animation: kf-marque-animation 13.3s linear infinite;
+    white-space: nowrap;
+}

@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/myindex/myindex"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "露露啊毛跟你讲",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+}
