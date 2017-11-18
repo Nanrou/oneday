@@ -64,7 +64,7 @@ def get_single_day(date_string):
     return scrape_detail(content)
 
 
-pool = ConnectionPool(host='localhost', port=6379, db=1)
+pool = ConnectionPool(host='redis', port=6379, db=1)
 redis_proxy = Redis(connection_pool=pool)
 
 
