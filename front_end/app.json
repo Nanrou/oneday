@@ -3,9 +3,9 @@
     "pages/myindex/myindex"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "露露啊毛跟你讲",
+    "navigationBarTitleText": "露露啊毛和你讲",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": true
   }

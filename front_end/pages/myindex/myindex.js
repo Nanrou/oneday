@@ -7,16 +7,17 @@ Page({
     remain_day: '',
 
     angle: 0,
-    img_src: '../../imgs/lulu.jpg',
+    img_src: 'amao6.jpg',
 
     img_uri: '',
     f_flag: false,
     b_flag: false,
+    l_flag: 'hidden',
     msg: '让我看看今天有什么事~'
   },
 
   handle_success: function(res){
-    var ll = res.data.today.split('-');
+    var ll = res.data.today.split('-')
     this.setData({
       f_flag: true,
       today: ll[1] + '月' + ll[2] + '日',
@@ -52,39 +53,53 @@ Page({
 
   onPullDownRefresh: function(){
     this.get_today()
-    switch (this.data.img_src) {
-      case '../../imgs/amao.jpg':
-        this.setData({
-          img_src: '../../imgs/lulu.jpg'
-        })
-        break
-      case '../../imgs/lulu.jpg':
-        this.setData({
-          img_src: '../../imgs/amao.jpg'
-        })
-        break
+    if (this.data.img_src.startsWith('a')){
+      this.setData({
+        img_src: 'lulu' + Math.floor((Math.random() * 7) + 1)+ '.jpg'
+      })
+    } else {
+      this.setData({
+        img_src: 'amao' + Math.floor((Math.random() * 9) + 1) + '.jpg'
+      })
     }
+    wx.stopPullDownRefresh()
   },
 
   set_button: function (e){
     this.setData({
       b_flag: !this.data.b_flag,
     })
+    switch(this.data.l_flag){
+      case '':
+        this.setData({
+          l_flag: 'hidden',
+        })
+        break
+      case 'hidden':
+        this.setData({
+          l_flag: '',
+        })
+        break
+    }
   },
 
 
   get_thatday: function(event){
     var opt = event.currentTarget.dataset.opt
     this.set_button(event)
-    setTimeout(this.set_button, 1800, event)
     var that = this
     wx.request({
       url: 'https://oneday.superxiaoshuo.com/oneday/' + that.data._today + '/' + opt,
       success: function (res) {
-        that.handle_success(res)
+        that.handle_success(res),
+        that.set_button(event)
       },
-      fail: that.handle_fail(),
+      fail: function(){
+        that.handle_fail(),
+        that.set_button(event)
+      },
     })
+    
   },
   rorate_cat: function(){
     switch(this.data.angle){

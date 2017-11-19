@@ -2,15 +2,16 @@
   <view class='main'>
     <view class='nav'>
       <button class='nav_item' plain='true' style='border:0' disabled='{{b_flag}}' bindtap='get_thatday' data-opt='prev'>
-        <view class='nav_text'>昨天</view>
+        <view class='nav_text'><text style='font-size: 1.5em'>《</text></view>
       </button>
     </view>
     <view class='mid'>
       <view>
         <button plain='true' style='border:0' bindtap='rorate_cat' >
-          <image id='cat' class='img' src='{{img_src}}' style='transform:rotate({{angle}}deg);'></image>
+          <image id='cat' mode='aspectFit' class='img' src='../../imgs/{{img_src}}' style='transform:rotate({{angle}}deg);'></image>
         </button>  
       </view>
+      <view style='visibility:{{l_flag}}'><text style='font-size: 2em'>等等，在翻书~</text></view>
       <view>
         <text>今天是{{today}}</text>
         <view wx:if="{{f_flag}}">
@@ -23,12 +24,14 @@
     </view>
     <view class='nav'>
       <button class='nav_item' plain='true' disabled='{{b_flag}}' style='border:0' bindtap='get_thatday' data-opt='next'>
-        <view class='nav_text'>明天</view>
+        <view class='nav_text'>
+          <text style='font-size: 1.5em'>》</text>
+        </view>
       </button>
     </view>
   </view>
   
-  <view class="marquee">
+  <view class="marquee" style='position:fixed;bottom:5px'>
       <view class="content">
           <text>露露喜欢扭着身子睡觉</text> <text style="display: inline-block; width: 5em;"></text>
           <text>啊毛虽然腿短但是肥呀</text> <text style="display: inline-block; width: 5em;"></text> 
