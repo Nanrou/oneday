@@ -53,8 +53,8 @@ def calculate_datetime(date_string):
         date = datetime(*[int(x) for x in date_nums])
     else:
         date = datetime.now()
-    passed_day = (date - datetime(datetime.now().year, 1, 1)).days + 1
-    remain_day = (datetime(datetime.now().year + 1, 1, 1) - date).days - 1
+    passed_day = (date - datetime(date.year, 1, 1)).days + 1
+    remain_day = (datetime(date.year + 1, 1, 1) - date).days - 1
     return passed_day, remain_day
 
 
@@ -81,4 +81,3 @@ def get_data_from_redis(date_string):  # format为 2017-11-16
 
 if __name__ == '__main__':
     pass
-
