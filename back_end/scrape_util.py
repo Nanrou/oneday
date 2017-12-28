@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from random import sample
 from datetime import datetime, timedelta
 import re
@@ -54,7 +55,11 @@ def calculate_datetime(date_string):
     else:
         date = datetime.now()
     passed_day = (date - datetime(date.year, 1, 1)).days + 1
+    if passed_day > 365:
+        passed_day -= 365
     remain_day = (datetime(date.year + 1, 1, 1) - date).days - 1
+    if remain_day > 365:
+        remain_day += 365
     return passed_day, remain_day
 
 
@@ -80,4 +85,5 @@ def get_data_from_redis(date_string):  # format为 2017-11-16
 
 
 if __name__ == '__main__':
+    # print(calculate_datetime('11/12'))
     pass
